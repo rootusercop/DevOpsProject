@@ -8,8 +8,6 @@ Team :
 Submission: **Milestone#1** <br>
 Project Worked On: [WebGoat](https://github.com/nkatre/WebGoat) <br>
 
-----------
-
 Evaluation
 -------------
 
