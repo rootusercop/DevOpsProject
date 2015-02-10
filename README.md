@@ -31,7 +31,23 @@ The following steps demonstrate the setup for this Milestone
  12. Now in `Source Control Management` enter Repository URL as [https://github.com/nkatre/WebGoat](https://github.com/nkatre/WebGoat) and link your github credentials with this repository as shown in the figure below
  ![scm](https://github.com/nkatre/DevOpsProject/blob/master/Images/scm.png)
  13. You can also fork the original repository [WebGoat](https://github.com/WebGoat/WebGoat) in your github account and make the same changes as we performed in this milestone using your github credentials.
-	
+
+
+Plugins Installed
+-------------
+To install plugins, goto Jenkins `Dashboard` > `Manage Jenkins` > `Manage Plugins`<br>
+Plugins installed for this milestone: <br>
+ 1. [GitHub Plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin) 
+ 2. [NodeLabel Parameter Plugin](https://wiki.jenkins-ci.org/display/JENKINS/NodeLabel+Parameter+Plugin)
+ 3. [Maven Project Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Maven+Project+Plugin)
+ 4. [Config File Provider Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Config+File+Provider+Plugin)
+ 5. [Git Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin)
+ 6. [Git Client Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Git+Client+Plugin)
+ 7. [Managed Script Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Managed+Script+Plugin)
+ 8. [GitHub API Plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+API+Plugin)
+ 9. [Parameterized Trigger Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Parameterized+Trigger+Plugin)
+ 10. [SCM API Plugin](https://wiki.jenkins-ci.org/display/JENKINS/SCM+API+Plugin)
+
 Evaluation
 -------------
 
@@ -95,7 +111,7 @@ II. Dependency Management
 
 **Steps for maven configuration**
 
- 5. Install Maven plugin in Jenkins
+ 5. Install [Maven Project Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Maven+Project+Plugin) in Jenkins
  6. Goto `Manage Jenkins` > `Configure System`.
  7. In `Maven Configuration`, set the following
 ![Maven Configuration](https://github.com/nkatre/DevOpsProject/blob/master/Images/mj_mavenConfig.png)
@@ -155,7 +171,7 @@ IV. Multiple Nodes
  To demonstrate multiple nodes, we have created a slave node along with the master node
  
  The following steps are followed to set up a Slave node 
- 1. Install Slave Node plugin in Jenkins
+ 1. Install [NodeLabel Parameter Plugin](https://wiki.jenkins-ci.org/display/JENKINS/NodeLabel+Parameter+Plugin) plugin in Jenkins
  2. Goto `Manage Jenkins` > `Manage nodes`> `New Node`
  3. Set the following configuration to the Slave Node as shown in the figure.
  ![Slave Configuration](https://github.com/nkatre/DevOpsProject/blob/master/Images/slaveConfiguration.png)
@@ -210,6 +226,3 @@ The above URL will show the status of build #19<br>
  4. Now to check the status of any previous builds, enter the following URL in the web browser [http://nkatre-inspiron-3521:8080/job/WebGoat/19/](http://nkatre-inspiron-3521:8080/job/WebGoat/19/ "http://nkatre-inspiron-3521:8080/job/WebGoat/19/")
 This will show the status of build #19
 ![StatusOfBuild#19ViaHTTP](https://github.com/nkatre/DevOpsProject/blob/master/Images/build%2319.png)
-
-	 
-
