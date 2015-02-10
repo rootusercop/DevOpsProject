@@ -179,17 +179,17 @@ We can retrieve the status of any build if we know two parameters:<br>
 For Example:  The name of my computer is set as`nkatre-Inspiron-3521` and the port number on which Jenkins is running is `8080`<br>
 
 Thus, the status of any build can be accessed by any machine in the network via the following URL:<br>
-http://nkatre-inspiron-3521:8080/job/WebGoat/19/<br>
+[enter link description here](http://nkatre-inspiron-3521:8080/job/WebGoat/19/ "http://nkatre-inspiron-3521:8080/job/WebGoat/19/")<br>
 The above URL will show the status of build #19<br>
 
 **The following steps are followed to check status via http**
 
  1. Goto `Manage Jenkins` > `Configure System`
- 2. In `Jenkins Location`, set the `Jenkins URL` as http://computer-name:8080/  <br>
+ 2. In `Jenkins Location`, set the `Jenkins URL` as [enter link description here](http://computer-name:8080/ "http://computer-name:8080/") <br>
 	 For Example: In my case it is http://nkatre-Inspiron-3521:8080/
  3. The below figure shows the settings
    ![statusSettings](https://github.com/nkatre/DevOpsProject/blob/master/Images/status1.png) 
- 4. Now to check the status of any previous builds, enter the following URL in the web browser http://nkatre-inspiron-3521:8080/job/WebGoat/19/ 
+ 4. Now to check the status of any previous builds, enter the following URL in the web browser [http://nkatre-inspiron-3521:8080/job/WebGoat/19/](http://nkatre-inspiron-3521:8080/job/WebGoat/19/ "http://nkatre-inspiron-3521:8080/job/WebGoat/19/")
 This will show the status of build #19
 ![StatusOfBuild#19ViaHTTP](https://github.com/nkatre/DevOpsProject/blob/master/Images/build%2319.png)
 
