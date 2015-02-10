@@ -34,7 +34,7 @@ We have used **Poll SCM** feature of Jenkins to achieve build trigger.<br>
 The following steps were followed to achieve build trigger.<br>
 
  1. Goto `Configure` option in Jenkins project.
- 2. In Build Triggers, select the following options:
+ 2. In `Build Triggers`, select the following options:
 
 >-  Build when a change is pushed to github
 >- Poll SCM
@@ -43,3 +43,37 @@ The following steps were followed to achieve build trigger.<br>
 If a change is identified in the repository then the project will be build in Jenkins
 
 ![Build Trigger Configuration](https://github.com/nkatre/DevOpsProject/blob/master/Images/buildTrigger.png "Build Trigger Configuration")
+
+----------
+
+
+Dependency Management
+-------------
+
+#### <i class="icon-upload"></i> Build dependency and restore to a clean state
+
+ 1. We achieve this by configuring maven in Jenkins<br>
+ 2. In the Project Configuration, we invoke maven and set goal to `clean install`<br>
+ 3. To demonstrate this, a dependency is added in `pom.xml` file of the
+    project<br>
+ 4. When the project is build then this dependency is also included in
+    the project which can be seen in console output in Jenkins.
+
+**Steps for maven configuration**
+
+ 5. Goto `Manage Jenkins` > `Configure System`.
+ 6. In `Maven Configuration`, set the following
+![Maven Configuration](https://github.com/nkatre/DevOpsProject/blob/master/Images/mj_mavenConfig.png)
+ 7. Scroll down to `Maven` option and select to install maven automatically.
+ 8. In `Maven Project Configuration` select `Default` as `Local Maven Repository` as shown in the figure below
+ ![Maven Config](https://github.com/nkatre/DevOpsProject/blob/master/Images/mj_mavenConfig.png)
+ 9. `Save` this configuration
+
+**Steps for clean install**
+
+ 10. Goto Dashboard of Jenkins, select Project and click on `Configure`.
+ 11. Select `Build` > `Add a Build Step` > `Invoke Top Level Maven Targets`
+ 12. In this, select `Maven Version` as **maven** and in `Goals` we have to write **clean install** as mentioned in the following image.
+ ![Maven Clean Install](https://github.com/nkatre/DevOpsProject/blob/master/Images/mavencleanInstall.png)
+
+**Steps to add a dependency and build the project**
