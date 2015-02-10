@@ -2,12 +2,18 @@ DevOps Project
 ===================
 Team :
 
- 1. Nikhil Katre (nkatre@ncsu.edu)
- 2. Pengyu Li (pli5@ncsu.edu)
+ - Nikhil Katre (nkatre@ncsu.edu)
+ - Pengyu Li (pli5@ncsu.edu)
  
 Submission: **Milestone#1** <br>
 Project Worked On: [WebGoat](https://github.com/nkatre/WebGoat) <br>
+Submission Files:
+> Config File Of Jenkins
+>  - Config File Of [WebGoat](https://github.com/nkatre/WebGoat)  Project
+>  - Screenshots
+>  - README.md
 
+ 
 Evaluation
 -------------
 
@@ -33,6 +39,7 @@ I. Triggered Builds
 We have used **Poll SCM** feature of Jenkins to achieve build trigger.<br>
 The following steps were followed to achieve build trigger.<br>
 
+ - Install Github plugin in Jenkins
  - Goto `Configure` option in Jenkins project.
  - In `Build Triggers`, select the options as shown in the image below
 
@@ -70,27 +77,28 @@ II. Dependency Management
 
 **Steps for maven configuration**
 
- 5. Goto `Manage Jenkins` > `Configure System`.
- 6. In `Maven Configuration`, set the following
+ 5. Install Maven plugin in Jenkins
+ 6. Goto `Manage Jenkins` > `Configure System`.
+ 7. In `Maven Configuration`, set the following
 ![Maven Configuration](https://github.com/nkatre/DevOpsProject/blob/master/Images/mj_mavenConfig.png)
- 7. Scroll down to `Maven` option and select to install maven automatically.
- 8. In `Maven Project Configuration` select `Default` as `Local Maven Repository` as shown in the figure below
+ 8. Scroll down to `Maven` option and select to install maven automatically.
+ 9. In `Maven Project Configuration` select `Default` as `Local Maven Repository` as shown in the figure below
  ![Maven Config](https://github.com/nkatre/DevOpsProject/blob/master/Images/mj_mavenConfig.png)
- 9. `Save` this configuration
+ 10. `Save` this configuration
 
 **Steps for clean install**
 
- 10. Goto Dashboard of Jenkins, select Project and click on `Configure`.
- 11. Select `Build` > `Add a Build Step` > `Invoke Top Level Maven Targets`
- 12. In this, select `Maven Version` as **maven** and in `Goals` we have to write **clean install** as mentioned in the following image.
+ 11. Goto Dashboard of Jenkins, select Project and click on `Configure`.
+ 12. Select `Build` > `Add a Build Step` > `Invoke Top Level Maven Targets`
+ 13. In this, select `Maven Version` as **maven** and in `Goals` we have to write **clean install** as mentioned in the following image.
  ![Maven Clean Install](https://github.com/nkatre/DevOpsProject/blob/master/Images/mavencleanInstall.png)
 
 **Steps to add a dependency and build the project**
 
- 13. We add a dependency ***commons-fileupload*** in `pom.xml` file of the project as follows
+ 14. We add a dependency ***commons-fileupload*** in `pom.xml` file of the project as follows
       ![Initial State](https://github.com/nkatre/DevOpsProject/blob/master/Images/dependency1.png)
       ![Added Dependancy](https://github.com/nkatre/DevOpsProject/blob/master/Images/dependency2.png)
- 14. Now, go to the `Dashboard` of Jenkins and `Build` the Project
+ 15. Now, go to the `Dashboard` of Jenkins and `Build` the Project
 
 **Output of build after adding `"commons-fileupload"` dependency**
 ![dependency output](https://github.com/nkatre/DevOpsProject/blob/master/Images/commons-fileupload-dependency.png)
@@ -114,8 +122,76 @@ III. Build Script Execution
  3. In the `command`, write "***sh sampleScript.sh***" which will execute the shell script sampleScript.sh
  ![build script](https://github.com/nkatre/DevOpsProject/blob/master/Images/buildScript.png)
  4. Goto [WebGoat](https://github.com/nkatre/WebGoat) project directory and add a file `sampleScript.sh` which echoes "**Hello WebGoat**" to the console screen on execution
- ![sampleScript.sh](https://github.com/nkatre/DevOpsProject/blob/master/Images/Screenshot%20from%202015-02-09%2020:26:04.png)
+	 ![sampleScript.sh](https://github.com/nkatre/DevOpsProject/blob/master/Images/Screenshot%20from%202015-02-09%2020:26:04.png)
  5.  Now goto Dashboard of Jenkins and build the project
 
 **Output of build script execution**
 ![scriptExecution](https://github.com/nkatre/DevOpsProject/blob/master/Images/helloWebGoat.png)
+
+----------
+
+
+IV. Multiple Nodes
+--------------------
+
+ To demonstrate multiple nodes, we have created a slave node along with the master node
+ 
+ The following steps are followed to set up a Slave node 
+ 1. Install Slave Node plugin in Jenkins
+ 2. Goto `Manage Jenkins` > `Manage nodes`> `New Node`
+ 3. Set the following configuration to the Slave Node as shown in the figure.
+ ![Slave Configuration](https://github.com/nkatre/DevOpsProject/blob/master/Images/slaveConfiguration.png)
+ 4.  Now, goto Dashboard of Jenkins, select Project and click on `Configure`.
+ 5. Select on the option `This build is parameterized`
+ 6. Select both `master` and `slave` as default nodes
+ 7. Select option `Allow multi node selection for concurrent builds`  
+ 8. Select `Execute concurrent builds if necessary`
+ 9. All the above changes made to the Project Configuration is also shown in the below diagram
+![ProjectConfigurationForSlaveNode](https://github.com/nkatre/DevOpsProject/blob/master/Images/slave1.png)
+![ProjectConfigurationForSlaveNode](https://github.com/nkatre/DevOpsProject/blob/master/Images/slave2.png)
+ 10.  Now goto Dashboard of Jenkins and click on `Build Executor Status` option mentioned in the navigation box in the left
+ 11. Click on `Slave` and Run the slave node to make it active
+	 ![masterslave](https://github.com/nkatre/DevOpsProject/blob/master/Images/masterslave.png)
+ 12. Finally goto Dashboard of Jenkins and build the project
+ 
+ **Output of the multinode build**
+ 
+ 13.  After clicking build, we get the following screen. Select both the nodes and click build.
+	 ![multinodebuild](https://github.com/nkatre/DevOpsProject/blob/master/Images/buildmultinode.png)
+ 14. We will notice that in the build history, we get two builds in progress where one is master and the other is slave.
+	 ![twobuilds](https://github.com/nkatre/DevOpsProject/blob/master/Images/twoexecutions.png)
+ 15. In the console output, we can verify the two builds.
+	This is the master build which ran successfully.
+	![masterBuild](https://github.com/nkatre/DevOpsProject/blob/master/Images/masterBuild.png)
+	This is the slave build which ran successfully.
+	![slaveBuild](https://github.com/nkatre/DevOpsProject/blob/master/Images/slaveBuild.png)
+
+ ----------
+
+
+V. Status
+--------------------
+We can retrieve the status of any build if we know two parameters:<br>
+
+ 1. `IP Address` or `Computer Name`
+ 2. `Port Number` on which Jenkins is running
+
+For Example:  The name of my computer is set as`nkatre-Inspiron-3521` and the port number on which Jenkins is running is `8080`<br>
+
+Thus, the status of any build can be accessed by any machine in the network via the following URL:<br>
+http://nkatre-inspiron-3521:8080/job/WebGoat/19/<br>
+The above URL will show the status of build #19<br>
+
+**The following steps are followed to check status via http**
+
+ 1. Goto `Manage Jenkins` > `Configure System`
+ 2. In `Jenkins Location`, set the `Jenkins URL` as http://computer-name:8080/  <br>
+	 For Example: In my case it is http://nkatre-Inspiron-3521:8080/
+ 3. The below figure shows the settings
+   ![statusSettings](https://github.com/nkatre/DevOpsProject/blob/master/Images/status1.png) 
+ 4. Now to check the status of any previous builds, enter the following URL in the web browser http://nkatre-inspiron-3521:8080/job/WebGoat/19/ 
+This will show the status of build #19
+![StatusOfBuild#19ViaHTTP](https://github.com/nkatre/DevOpsProject/blob/master/Images/build#19.png)
+
+	 
+
