@@ -95,3 +95,27 @@ II. Dependency Management
 **Output of build after adding `"commons-fileupload"` dependency**
 ![dependency output](https://github.com/nkatre/DevOpsProject/blob/master/Images/commons-fileupload-dependency.png)
 ![dependency output](https://github.com/nkatre/DevOpsProject/blob/master/Images/common-fileupload.png)
+
+----------
+
+
+III. Build Script Execution
+--------------------
+
+ 1. To demonstrate a build script execution, we have added a shell script
+   file named `sampleScript.sh` in the
+   [WebGoat](https://github.com/nkatre/WebGoat) project directory.
+ 2. The contents of `sampleScript.sh` file is an echo command which outputs "**Hello WebGoat**" to the console screen when the project is built
+
+**Steps to demonstrate build script execution**
+
+ 1. Goto Dashboard of Jenkins, select Project and click on `Configure`.
+ 2. Select `Build` > `Add a Build Step` > `Execute Shell`
+ 3. In the `command`, write "***sh sampleScript.sh***" which will execute the shell script sampleScript.sh
+ ![build script](https://github.com/nkatre/DevOpsProject/blob/master/Images/buildScript.png)
+ 4. Goto [WebGoat](https://github.com/nkatre/WebGoat) project directory and add a file `sampleScript.sh` which echoes "**Hello WebGoat**" to the console screen on execution
+ ![sampleScript.sh](https://github.com/nkatre/DevOpsProject/blob/master/Images/Screenshot%20from%202015-02-09%2020:26:04.png)
+ 5.  Now goto Dashboard of Jenkins and build the project
+
+**Output of build script execution**
+![scriptExecution](https://github.com/nkatre/DevOpsProject/blob/master/Images/helloWebGoat.png)
