@@ -47,7 +47,7 @@ If a change is identified in the repository then the project will be build in Je
 ----------
 
 
-Dependency Management
+II. Dependency Management
 -------------
 
 #### <i class="icon-upload"></i> Build dependency and restore to a clean state
@@ -77,3 +77,12 @@ Dependency Management
  ![Maven Clean Install](https://github.com/nkatre/DevOpsProject/blob/master/Images/mavencleanInstall.png)
 
 **Steps to add a dependency and build the project**
+
+ 13. We add a dependency ***commons-fileupload*** in `pom.xml` file of the project as follows
+      ![Initial State](https://github.com/nkatre/DevOpsProject/blob/master/Images/dependency1.png)
+      ![Added Dependancy](https://github.com/nkatre/DevOpsProject/blob/master/Images/dependency2.png)
+ 14. Now, go to the `Dashboard` of Jenkins and `Build` the Project
+
+**Output of build after adding `"commons-fileupload"` dependency**
+![dependency output](https://github.com/nkatre/DevOpsProject/blob/master/Images/commons-fileupload-dependency.png)
+![dependency output](https://github.com/nkatre/DevOpsProject/blob/master/Images/common-fileupload.png)
