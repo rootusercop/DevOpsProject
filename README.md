@@ -6,14 +6,32 @@ Team :
  - Pengyu Li (pli5@ncsu.edu)
  
 Submission: **Milestone#1** <br>
-Project Worked On: [WebGoat](https://github.com/nkatre/WebGoat) <br>
+Link To Project Code: [WebGoat](https://github.com/nkatre/WebGoat) <br>
 Submission Files:
 >  - Config File Of Jenkins
 >  - Config File Of [WebGoat](https://github.com/nkatre/WebGoat)  Project
 >  - Screenshots
 >  - README.md
 
- 
+Build Section
+-------------
+The following steps demonstrate the setup for this Milestone
+ 1.  Select [WebGoat](https://github.com/nkatre/WebGoat) project on git.
+ 2.  Download and Install [java 8 update 31](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+ 3. Download [jenkins.war](http://jenkins-ci.org/) file
+ 4. Goto directory where jenkins.war is present and execute the command `java -jar jenkins.war`
+ 5. After the `winstone server` starts running we will get the following screen
+ ![winstoneServer](https://github.com/nkatre/DevOpsProject/blob/master/Images/winstone.png)
+ 6. This indicates that Jenkins is deployed and running properly
+ 7. Goto Dashboard of Jenkins and click on `New Item`, now enter the `Item name` as the name of the project that we want to work with. (We are working with [WebGoat](https://github.com/nkatre/WebGoat) Project)
+ 8. Select type of project as `Freestyle project` and click `OK`
+ 9. Goto Jenkins `Dashboard` > `Manage Jenkins` > `Manage Plugins`.
+ 10. Click on `Available` and install  [GitHub Plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin) 
+ 11. Goto Jenkins `Dashboard` > `WebGoat` > `Configure` 
+ 12. Now in `Source Control Management` enter Repository URL as [https://github.com/nkatre/WebGoat](https://github.com/nkatre/WebGoat) and link your github credentials with this repository as shown in the figure below
+ ![scm](https://github.com/nkatre/DevOpsProject/blob/master/Images/scm.png)
+ 13. You can also fork the original repository [WebGoat](https://github.com/WebGoat/WebGoat) in your github account and make the same changes as we performed in this milestone using your github credentials.
+	
 Evaluation
 -------------
 
