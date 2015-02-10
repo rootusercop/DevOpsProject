@@ -33,16 +33,25 @@ I. Triggered Builds
 We have used **Poll SCM** feature of Jenkins to achieve build trigger.<br>
 The following steps were followed to achieve build trigger.<br>
 
- 1. Goto `Configure` option in Jenkins project.
- 2. In `Build Triggers`, select the following options:
+ - Goto `Configure` option in Jenkins project.
+ - In `Build Triggers`, select the options as shown in the image below
 
 >-  Build when a change is pushed to github
 >- Poll SCM
 
-3. In the Schedule, type `*/5 * * * *` which indicates that the git repository will be polled for every 5 minutes.<br>
-If a change is identified in the repository then the project will be build in Jenkins
+ - In the Schedule, type `*/5 * * * *` which indicates that the git
+   repository will be polled for every 5 minutes.<br> If a change is
+   identified in the repository then the project will be build in
+   Jenkins
 
 ![Build Trigger Configuration](https://github.com/nkatre/DevOpsProject/blob/master/Images/buildTrigger.png "Build Trigger Configuration")
+
+ - I create a sample file called **sampleFile** and add this to the project [WebGoat](https://github.com/nkatre/WebGoat)
+ - In the next git poll, Jenkins identifies the changes made to the repository and hence builds the project automatically on identifying changes.
+
+**Output of build triggered by changes to Project**
+![BuildTriggeredByPoll](https://github.com/nkatre/DevOpsProject/blob/master/Images/pollOutput.png)
+![BuildTriggeredByPoll](https://github.com/nkatre/DevOpsProject/blob/master/Images/pollOutput1.png)
 
 ----------
 
