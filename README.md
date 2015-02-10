@@ -8,7 +8,7 @@ Team :
 Submission: **Milestone#1** <br>
 Project Worked On: [WebGoat](https://github.com/nkatre/WebGoat) <br>
 Submission Files:
-> Config File Of Jenkins
+>  - Config File Of Jenkins
 >  - Config File Of [WebGoat](https://github.com/nkatre/WebGoat)  Project
 >  - Screenshots
 >  - README.md
@@ -191,7 +191,7 @@ The above URL will show the status of build #19<br>
    ![statusSettings](https://github.com/nkatre/DevOpsProject/blob/master/Images/status1.png) 
  4. Now to check the status of any previous builds, enter the following URL in the web browser http://nkatre-inspiron-3521:8080/job/WebGoat/19/ 
 This will show the status of build #19
-![StatusOfBuild#19ViaHTTP](https://github.com/nkatre/DevOpsProject/blob/master/Images/build#19.png)
+![StatusOfBuild#19ViaHTTP](https://github.com/nkatre/DevOpsProject/blob/master/Images/build%2319.png)
 
 	 
 
