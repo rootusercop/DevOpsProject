@@ -17,7 +17,7 @@ Build Section
 -------------
 The following steps demonstrate the setup for this Milestone
  1.  Select [WebGoat](https://github.com/nkatre/WebGoat) project on git.
- 2.  Download and Install [java 8 update 31](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+ 2.  Download and Install [java 8 update 31](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
  3. Download [jenkins.war](http://jenkins-ci.org/) file
  4. Goto directory where jenkins.war is present and execute the command `java -jar jenkins.war`
  5. After the `winstone server` starts running we will get the following screen
